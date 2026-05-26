@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.ferrett.annoyingmod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -26,8 +26,8 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MOD_ID)
-public final class ExampleMod {
+@Mod(AnnoyingMod.MOD_ID)
+public final class AnnoyingMod {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "examplemod";
     // Directly reference a slf4j logger
@@ -72,7 +72,7 @@ public final class ExampleMod {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
-    public ExampleMod(FMLJavaModLoadingContext context) {
+    public AnnoyingMod(FMLJavaModLoadingContext context) {
         var modBusGroup = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
@@ -86,7 +86,7 @@ public final class ExampleMod {
         CREATIVE_MODE_TABS.register(modBusGroup);
 
         // Register the item to a creative tab
-        BuildCreativeModeTabContentsEvent.BUS.addListener(ExampleMod::addCreative);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(AnnoyingMod::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
