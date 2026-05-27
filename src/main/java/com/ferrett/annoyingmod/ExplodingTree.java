@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -51,7 +52,7 @@ public class ExplodingTree {
             serverLevel.explode(
                     null,                          // entity causing it (null = world)
                     pos.getX(), pos.getY(), pos.getZ(), // position
-                    10f,                           // radius (vanilla TNT is 4f)
+                    15f,                           // radius (vanilla TNT is 4f)
                     true,                         // fire
                     Level.ExplosionInteraction.BLOCK // interaction type
             );

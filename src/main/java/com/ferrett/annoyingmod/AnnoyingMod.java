@@ -53,6 +53,9 @@ public final class AnnoyingMod {
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modBusGroup);
 
+        ModSounds.SOUND_EVENTS.register(modBusGroup);
+        ModSounds.init();
+
         // Register the item to a creative tab
         BuildCreativeModeTabContentsEvent.BUS.addListener(AnnoyingMod::addCreative);
 
